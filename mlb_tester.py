@@ -15,8 +15,9 @@ full_data = response.json()
 mlb_40 = full_data['roster_40']['queryResults']['row']
 
 i = 0
-while mlb_40[i]['name_full']:
-    print(mlb_40[i]['name_full'])
-    i += 1
-
-#print(mlb_40[0]['name_full'])
+while i < len(mlb_40):
+    try:
+        print(mlb_40[i]['name_display_first_last'])
+        i += 1
+    except:
+        break
